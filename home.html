@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--suppress JSUnresolvedLibraryURL -->
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Tien Dung Le">
+    <title>Remy US Shop</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styling.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+</head>
+<body>
+<section>
+    <div class="container-fluid custom-footer sticky-top" data-aos="fade-down">
+        <nav class="navbar navbar-expand-lg navbar-dark container" >
+            <a href="home.html" class="navbar-brand">
+                Remy US Shop
+            </a>
+            <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#toggleMobileMenu"
+                    aria-controls="toggleMobileMenu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon middle-bar"></span>
+                <span class="toggler-icon bottom-bar"></span>
+
+            </button>
+            <div class="collapse navbar-collapse" id="toggleMobileMenu">
+                <ul class="navbar-nav ms-auto text-end">
+                    <li>
+                        <a class="nav-link" href="#">Sản Phẩm</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Về Chúng Tôi</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#contact">Liên Hệ</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Đăng Nhập</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="home" class="container-fluid text-center flex-column d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <p class="display-1" data-aos="fade-up">Chào mừng quý khách!</p>
+
+    </div>
+</section>
+
+<section data-aos="fade-up">
+    <div class="container-fluid custom-footer">
+        <div id="contact" class="container d-flex flex-wrap justify-content-between align-items-center custom-contact">
+            <p class="display-1 text-light">Chăm sóc khách hàng:</p>
+            <ul class="list-unstyled">
+                <li class=" display-5">
+                    <a href="https://www.facebook.com/profile.php?id=100056885446954" class="text-decoration-none text-light custom-contact-link"
+                       target="_blank">Facebook</a>
+                </li>
+                <li class=" display-5">
+                    <a href="mailto:hello@tienl.dev" class=" text-decoration-none text-light custom-contact-link"
+                       target="_blank">hello@tienl.dev</a>
+                </li>
+            </ul>
+        </div>
+        <footer class="text-center py-3">
+            <div>
+                <p>&copy; 2023 Remy US Shop. All rights reserved. Created by <a href="https://tienl.dev" target="_blank" class="text-decoration-none text-dark">Tien Le</a></p>
+            </div>
+        </footer>
+    </div>
+</section>
+
+<script src="js/bootstrap.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>
