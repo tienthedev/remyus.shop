@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--suppress JSUnresolvedLibraryURL -->
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Tien Dung Le">
+    <title>Sản Phẩm</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styling.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+</head>
+<body>
+<section >
+    <div class="container-fluid custom-footer sticky-top" data-aos="fade-down">
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <a href="index.html" class="navbar-brand">
+                Remy US Shop
+            </a>
+            <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#toggleMobileMenu"
+                    aria-controls="toggleMobileMenu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon middle-bar"></span>
+                <span class="toggler-icon bottom-bar"></span>
+
+            </button>
+            <div class="collapse navbar-collapse" id="toggleMobileMenu">
+                <ul class="navbar-nav ms-auto text-end">
+                    <li>
+                        <a class="nav-link" href="sanpham.html">Sản Phẩm</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="vechungtoi.html">Về Chúng Tôi</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#contact">Liên Hệ</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="home" class="container-fluid text-center flex-column d-flex justify-content-center align-items-center">
+        <p class="display-1 py-5" data-aos="fade-up">Hàng Mới Nhập</p>
+        <div class="container py-5" data-aos="fade-up">
+            <div class="container-fluid" id="product-container"></div>
+        </div>
+    </div>
+
+
+</section>
+
+<section data-aos="fade-up">
+    <div class="container-fluid custom-footer">
+        <div id="contact" class="container d-flex flex-wrap justify-content-between align-items-center custom-contact">
+            <p class="display-1 text-light">Chăm sóc khách hàng:</p>
+            <ul class="list-unstyled">
+                <li class=" display-5">
+                    <a href="https://www.facebook.com/profile.php?id=100056885446954"
+                       class="text-decoration-none text-light custom-contact-link"
+                       target="_blank">Facebook</a>
+                </li>
+                <li class=" display-5">
+                    <a href="mailto:hello@tienl.dev" class=" text-decoration-none text-light custom-contact-link"
+                       target="_blank">hello@tienl.dev</a>
+                </li>
+            </ul>
+        </div>
+        <footer class="text-center py-3 text-light">
+            <div>
+                <p>&copy; 2023 Remy US Shop. All rights reserved. Created by
+                    <a href="https://tienl.dev" target="_blank" class="text-decoration-none text-light">Tien Le.</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+</section>
+
+<script src="js/bootstrap.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+    const products = [
+        {
+            id: 1,
+            title: 'Áo Thun Tay Dài Adidas',
+            price: 39.99,
+            description: 'Size: M Unisex',
+            imageUrl: 'inventory/picture/adidasStripes.jpg'
+        },
+        {
+            id: 2,
+            title: 'Giày Nike Dunk Low',
+            price: 129.99,
+            description: 'Size: 8 US Nam',
+            imageUrl: 'inventory/picture/nikeDunk.jpg'
+        },
+        {
+            id: 3,
+            title: 'Thuốc Bổ Kirkland Daily Multi',
+            price: 16.99,
+            description: 'Số lượng: 500 viên/hủ',
+            imageUrl: 'inventory/picture/kirklandSignatureMulti.webp'
+        },
+        {
+            id: 4,
+            title: 'Thuốc Bổ Collagen',
+            price: 23.99,
+            description: 'Số lượng: 390 viên/hủ',
+            imageUrl: 'inventory/picture/collagen.webp'
+        },
+
+
+    ];
+
+    const container = document.getElementById('product-container');
+
+    // Loop through the product data and create product cards dynamically
+    products.forEach(product => {
+        const card = document.createElement('div');
+        card.classList.add('product-card');
+
+        const image = document.createElement('div');
+        image.classList.add('product-image');
+        // Set the background image using CSS
+        image.style.backgroundImage = `url(${product.imageUrl})`;
+
+        const title = document.createElement('div');
+        title.classList.add('product-title');
+        title.textContent = product.title;
+
+        const price = document.createElement('div');
+        price.classList.add('product-price');
+        price.textContent = `$${product.price.toFixed(2)}`;
+
+        const description = document.createElement('div');
+        description.classList.add('product-description');
+        description.textContent = product.description;
+
+        // Append elements to the card
+        card.appendChild(image);
+        card.appendChild(title);
+        card.appendChild(price);
+        card.appendChild(description);
+
+        // Append the card to the container
+        container.appendChild(card);
+    });
+</script>
+</body>
+</html>
