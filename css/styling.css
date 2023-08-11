@@ -1,10 +1,11 @@
-body{
+body {
     color: black;
     background-color: white;
     height: auto;
     width: auto;
+    font-family: 'Playfair Display', serif;
 }
-.custom-footer{
+    .custom-footer{
     background-color: #121212;
 }
 .custom-contact{

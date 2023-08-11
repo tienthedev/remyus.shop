@@ -9,15 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styling.css">
-
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 </head>
 <body>
 <section>
     <div class="container-fluid custom-footer sticky-top" data-aos="fade-down">
-        <nav class="navbar navbar-expand-lg navbar-dark container" >
-            <a href="index.html" class="navbar-brand">
-                Remy US Shop
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <a href="index.html">
+                <img alt="logo" src="media/remyusshopLogo.png" style="height: 90px; width: 200px;">
             </a>
             <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around"
                     type="button"
@@ -49,10 +50,15 @@
     </div>
     <div id="home" class="container-fluid text-center flex-column d-flex justify-content-center align-items-center" style="height: 100vh;" data-aos="fade-up">
         <p class="display-1 py-5" >Chào mừng quý khách!</p>
-        <a href="sanpham.html" class="btn btn-primary "  >Shop Sản Phẩm Mới</a>
+        <a href="#sale" class="btn btn-primary ">Sale Hot Nhất Tuần</a>
+    </div>
+    <div id="sale" class="container-fluid text-center flex-column d-flex justify-content-center align-items-center" style="height: auto; margin-bottom: 100px;" data-aos="fade-up">
+        <p class="display-3 py-5" data-aos="fade-up">Sale Hot Nhất Tuần</p>
+        <div class="container py-5" data-aos="fade-up">
+            <div class="container-fluid" id="product-container"></div>
+        </div>
     </div>
 </section>
-
 <section data-aos="fade-up">
     <div class="container-fluid custom-footer">
         <div id="contact" class="container d-flex flex-wrap justify-content-between align-items-center custom-contact">
@@ -80,6 +86,72 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();
+    const products = [
+        {
+            id: 1,
+            title: 'Áo Thun Tay Dài Adidas',
+            price: 39.99,
+            description: 'Size: M Unisex',
+            imageUrl: 'inventory/picture/adidasStripes.jpg'
+        },
+        {
+            id: 2,
+            title: 'Giày Nike Dunk Low',
+            price: 129.99,
+            description: 'Size: 8 US Nam',
+            imageUrl: 'inventory/picture/nikeDunk.jpg'
+        },
+        {
+            id: 3,
+            title: 'Thuốc Bổ Kirkland Daily Multi',
+            price: 16.99,
+            description: 'Số lượng: 500 viên/hủ',
+            imageUrl: 'inventory/picture/kirklandSignatureMulti.webp'
+        },
+        {
+            id: 4,
+            title: 'Thuốc Bổ Collagen',
+            price: 23.99,
+            description: 'Số lượng: 390 viên/hủ',
+            imageUrl: 'inventory/picture/collagen.webp'
+        },
+
+
+    ];
+
+    const container = document.getElementById('product-container');
+
+    // Loop through the product data and create product cards dynamically
+    products.forEach(product => {
+        const card = document.createElement('div');
+        card.classList.add('product-card');
+
+        const image = document.createElement('div');
+        image.classList.add('product-image');
+        // Set the background image using CSS
+        image.style.backgroundImage = `url(${product.imageUrl})`;
+
+        const title = document.createElement('div');
+        title.classList.add('product-title');
+        title.textContent = product.title;
+
+        const price = document.createElement('div');
+        price.classList.add('product-price');
+        price.textContent = `$${product.price.toFixed(2)}`;
+
+        const description = document.createElement('div');
+        description.classList.add('product-description');
+        description.textContent = product.description;
+
+        // Append elements to the card
+        card.appendChild(image);
+        card.appendChild(title);
+        card.appendChild(price);
+        card.appendChild(description);
+
+        // Append the card to the container
+        container.appendChild(card);
+    });
 </script>
 </body>
 </html>
